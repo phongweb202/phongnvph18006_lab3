@@ -1,0 +1,65 @@
+<div class="p-3">
+  <h2 class="alert alert-danger">{{title}}</h2>
+</div>
+<div class="md:tw-grid md:tw-grid-cols-3 md:tw-gap-6">
+  
+  <!-- <p>{{name?.invalid | json}}</p> -->
+  <div class="tw-mt-5 md:tw-mt-0 md:tw-col-span-2">
+    <form #form="ngForm" (submit)="onSubmit(form.value)" novalidate>
+      <input type="hidden" [(ngModel)]="productUpdate && productUpdate.id" name="id">
+      <div class="tw-shadow sm:tw-rounded-md sm:tw-overflow-hidden">
+        <div class="tw-px-4 tw-py-5 tw-bg-white tw-space-y-6 sm:tw-p-6">
+          <div class="tw-grid tw-grid-cols-3 tw-gap-6">
+            <div class="tw-col-span-3 sm:tw-col-span-2">
+              <label for="company-website" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700"> Name </label>
+              <div class="tw-mt-1 tw-flex tw-rounded-md tw-shadow-sm">
+                <input type="text" name="name" required #name="ngModel"
+                  [(ngModel)]="productUpdate && productUpdate.name" minlength="6"
+                  class="focus:tw-ring-indigo-500 focus:tw-border-indigo-500 tw-flex-1 tw-block tw-w-full tw-rounded-none tw-rounded-r-md sm:tw-text-sm tw-border-gray-300"
+                  placeholder="product name">
+
+              </div>
+           <div *ngIf="name.dirty">
+            <p class="text-danger" *ngIf="name.errors?.['required']">Tên sản phẩm không hợp lệ</p>
+            <p class="text-danger" *ngIf="name.errors?.['minlength']">Tên sản phẩm dài hơn 6 ký tự</p>
+           </div>
+            </div>
+          </div>
+
+          <div>
+            <label for="about" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700"> Description </label>
+            <div class="tw-mt-1">
+              <textarea #desc="ngModel" required name="desc" rows="3"
+                class="tw-shadow-sm focus:tw-ring-indigo-500 tw-pl-1 tw-pt-1 focus:tw-border-indigo-500 tw-mt-1 tw-block tw-w-full sm:tw-text-sm tw-border tw-border-gray-300 tw-rounded-md"
+                placeholder="description" [(ngModel)]="productUpdate && productUpdate.desc" minlength="10"></textarea>
+            </div>
+            <div *ngIf="desc.dirty">
+              <p class="text-danger" *ngIf="desc.errors?.['minlength']">Mô tả sản phẩm dài hơn 10 ký tự</p>
+             </div>
+          </div>
+
+          <div>
+            <label for="price" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Price</label>
+            <div class="tw-mt-1 tw-relative tw-rounded-md tw-shadow-sm">
+              <div class="tw-absolute tw-inset-y-0 tw-left-0 tw-pl-3 tw-flex tw-items-center tw-pointer-events-none">
+                <span class="tw-text-gray-500 sm:tw-text-sm"> đ </span>
+              </div>
+              <input type="number" min="1" #price="ngModel" required name="price" id="price" [(ngModel)]="productUpdate && productUpdate.price"
+                class="focus:tw-ring-indigo-500 focus:tw-border-indigo-500 tw-block tw-w-full tw-pl-7 tw-pr-12 sm:tw-text-sm tw-border-gray-300 tw-rounded-md"
+                placeholder="0.00">
+            </div>
+            <div *ngIf="price.dirty">
+              <p class="text-danger" *ngIf="price.errors?.['required']">Giá sản phẩm bắt buộc nhập</p>
+              <p class="text-danger" *ngIf="price.errors?.['min']">Giá sản phẩm lớn hơn 1</p>
+             </div>
+          </div>
+
+        </div>
+        <div class="tw-px-4 tw-py-3 tw-bg-gray-50 tw-text-right sm:tw-px-6">
+          <button type="submit" [disabled]="form.form.invalid"
+            class="tw-inline-flex tw-justify-center tw-py-2 tw-px-4 tw-border tw-border-transparent tw-shadow-sm tw-text-sm tw-font-medium tw-rounded-md tw-text-white tw-bg-indigo-600 hover:tw-bg-indigo-700 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-indigo-500">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

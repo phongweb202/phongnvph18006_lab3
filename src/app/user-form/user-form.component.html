@@ -1,0 +1,100 @@
+<div class="md:tw-grid md:tw-grid-cols-3 md:tw-gap-6">
+  <div class="md:tw-col-span-1">
+    <div class="tw-px-4 sm:tw-px-0">
+      <h3 class="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900"></h3>
+      <p class="tw-mt-1 tw-text-sm tw-text-gray-600">This information will be displayed publicly so be careful what you
+        share.</p>
+    </div>
+  </div>
+  <div class="tw-mt-5 md:tw-mt-0 md:tw-col-span-2">
+    <form #form="ngForm" (submit)="onSubmit(form.value)">
+      <input type="hidden" name="id">
+      <div class="tw-shadow sm:tw-rounded-md sm:tw-overflow-hidden">
+        <div class="tw-px-4 tw-py-5 tw-bg-white tw-space-y-6 sm:tw-p-6">
+          <div class="tw-grid tw-grid-cols-3 tw-gap-6">
+            <div class="tw-col-span-3 sm:tw-col-span-2">
+              <label for="company-website" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700"> Name </label>
+              <div class="tw-mt-1 tw-flex tw-rounded-md tw-shadow-sm">
+                <input type="text" name="name" [(ngModel)]="userUpdate && userUpdate.name"
+                  class="focus:tw-ring-indigo-500 focus:tw-border-indigo-500 tw-flex-1 tw-block tw-w-full tw-rounded-none tw-rounded-r-md sm:tw-text-sm tw-border-gray-300"
+                  placeholder="your name">
+              </div>
+            </div>
+          </div>
+          <div class="tw-grid tw-grid-cols-3 tw-gap-6">
+            <div class="tw-col-span-3 sm:tw-col-span-2">
+              <label for="company-website" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700"> Age </label>
+              <div class="tw-mt-1 tw-flex tw-rounded-md tw-shadow-sm">
+                <input type="text" name="age" [(ngModel)]="userUpdate && userUpdate.age"
+                  class="focus:tw-ring-indigo-500 focus:tw-border-indigo-500 tw-flex-1 tw-block tw-w-full tw-rounded-none tw-rounded-r-md sm:tw-text-sm tw-border-gray-300"
+                  placeholder="your age">
+              </div>
+            </div>
+          </div>
+          <div class="tw-grid tw-grid-cols-3 tw-gap-6">
+            <div class="tw-col-span-3 sm:tw-col-span-2">
+              <label for="company-website" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700"> Phone </label>
+              <div class="tw-mt-1 tw-flex tw-rounded-md tw-shadow-sm">
+                <input type="text" name="phoneNumber" [(ngModel)]="userUpdate && userUpdate.phoneNumber"
+                  class="focus:tw-ring-indigo-500 focus:tw-border-indigo-500 tw-flex-1 tw-block tw-w-full tw-rounded-none tw-rounded-r-md sm:tw-text-sm tw-border-gray-300"
+                  placeholder="your phoneNumber">
+              </div>
+            </div>
+          </div>
+          <div class="tw-grid tw-grid-cols-3 tw-gap-6">
+            <div class="tw-col-span-3 sm:tw-col-span-2">
+              <label for="company-website" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700"> Email </label>
+              <div class="tw-mt-1 tw-flex tw-rounded-md tw-shadow-sm">
+                <input type="text" name="email" [(ngModel)]="userUpdate && userUpdate.email"
+                  class="focus:tw-ring-indigo-500 focus:tw-border-indigo-500 tw-flex-1 tw-block tw-w-full tw-rounded-none tw-rounded-r-md sm:tw-text-sm tw-border-gray-300"
+                  placeholder="your email">
+              </div>
+            </div>
+          </div>
+          <div>
+            <label class="tw-block tw-text-sm tw-font-medium tw-text-gray-700"> Photo </label>
+            <div class="tw-mt-1 tw-flex tw-items-center">
+              <span class="tw-inline-block tw-h-12 tw-w-12 tw-rounded-full tw-overflow-hidden tw-bg-gray-100">
+                <svg class="tw-h-full tw-w-full tw-text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </span>
+              <button type="button"
+                class="tw-ml-5 tw-bg-white tw-py-2 tw-px-3 tw-border tw-border-gray-300 tw-rounded-md tw-shadow-sm tw-text-sm tw-leading-4 tw-font-medium tw-text-gray-700 hover:tw-bg-gray-50 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-indigo-500">Change</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="tw-block tw-text-sm tw-font-medium tw-text-gray-700"> Cover photo </label>
+            <div class="tw-mt-1 tw-flex tw-justify-center tw-px-6 tw-pt-5 tw-pb-6 tw-border-2 tw-border-gray-300 tw-border-dashed tw-rounded-md">
+              <div class="tw-space-y-1 tw-text-center">
+                <svg class="tw-mx-auto tw-h-12 tw-w-12 tw-text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48"
+                  aria-hidden="true">
+                  <path
+                    d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <div class="tw-flex tw-text-sm tw-text-gray-600">
+                  <label for="file-upload"
+                    class="tw-relative tw-cursor-pointer tw-bg-white tw-rounded-md tw-font-medium tw-text-indigo-600 hover:tw-text-indigo-500 focus-within:tw-outline-none focus-within:tw-ring-2 focus-within:tw-ring-offset-2 focus-within:tw-ring-indigo-500">
+                    <span>Upload a file</span>
+                    <input id="file-upload" name="avatar" ngModel type="file" class="tw-sr-only">
+                  </label>
+                  <p class="tw-pl-1">or drag and drop</p>
+                </div>
+                <p class="tw-text-xs tw-text-gray-500">PNG, JPG, GIF up to 10MB</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <!-- </div> -->
+      <div class="tw-px-4 tw-py-3 tw-bg-gray-50 tw-text-right sm:tw-px-6">
+        <button type="submit"
+          class="tw-inline-flex tw-justify-center tw-py-2 tw-px-4 tw-border tw-border-transparent tw-shadow-sm tw-text-sm tw-font-medium tw-rounded-md tw-text-white tw-bg-indigo-600 hover:tw-bg-indigo-700 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-indigo-500">Save</button>
+      </div>
+  </div>
+  </form>
+</div>
+</div>

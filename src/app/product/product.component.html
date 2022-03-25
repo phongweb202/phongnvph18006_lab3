@@ -1,0 +1,27 @@
+<div class="row">
+
+    <table class="table text-center table-bordered">
+        <thead>
+            <tr>
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Desc</th>
+                <th><button class="btn btn-success" (click)="chuyenTrang()">Create</button></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of products">
+                <td>{{p.id}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.price | currency: "VND" | lowercase }}</td>
+                <td>{{p.desc}}</td>
+                <td>
+                    <a [routerLink]="['/product',p.id]"><button class="btn btn-info">View</button></a>
+                    <a [routerLink]="['/product',p.id,'edit']"><button class="btn btn-warning ms-1">Edit</button></a>
+                    <button class="btn btn-danger ms-1" (click)="remove(p.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

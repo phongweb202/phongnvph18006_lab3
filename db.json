@@ -1,0 +1,20 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "San Pham A",
+      "desc": "moi them",
+      "price": "10000000"
+    }
+  ],
+  "users": [
+    {
+      "name": "thuy 1999",
+      "age": "25",
+      "phoneNumber": "0325500080",
+      "email": "alex1@fpt.edu.vn",
+      "avatar": "https://thuthuatnhanh.com/wp-content/uploads/2019/07/anh-girl-xinh-facebook-tuyet-dep-387x580.jpg",
+      "id": 1
+    }
+  ]
+}

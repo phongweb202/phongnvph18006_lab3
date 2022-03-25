@@ -1,0 +1,32 @@
+<!-- <button class="btn btn-primary" (click)="render(show)">View Inventor</button>
+  <button class="btn btn-warning ms-3" (click)="renderProduct(showProduct)">View Product</button> -->
+<div class="row">
+
+    <table class="table text-center table-bordered ">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>PhoneNumber</th>
+          <th>Email</th>
+          <th>Avatar</th>
+          <th><a routerLink="create"><button class="btn btn-primary">ADD STUDENT</button></a></th>
+        </tr>
+      </thead>
+      <tbody *ngIf="users.length > 0">
+        <tr *ngFor="let u of users">
+          <td>{{u.id}}</td>
+          <td>{{u.name}}</td>
+          <td>{{u.age}}</td>
+          <td>{{u.phoneNumber}}</td>
+          <td>{{u.email}}</td>
+          <td><img [src]="u.avatar" alt="" class="tw-w-16 tw-m-auto"></td>
+          <td>
+            <a [routerLink]="[u.id,'edit']" class="btn btn-warning me-1">EDIT</a>
+            <button class="btn btn-danger" (click)="remove(u.id)">DELETE</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

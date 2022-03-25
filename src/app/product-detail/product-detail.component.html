@@ -1,0 +1,22 @@
+<div class="tw-bg-white tw-shadow tw-overflow-hidden sm:tw-rounded-lg">
+  <div class="tw-px-4 tw-py-5 sm:tw-px-6">
+    <h3 class="tw-text-lg tw-leading-6 tw-font-medium tw-text-gray-900">{{productDetail && productDetail.name | uppercase}}</h3>
+    <p class="tw-mt-1 tw-max-w-2xl tw-text-sm tw-text-gray-500">Product details and application.</p>
+  </div>
+  <div class="tw-border-t tw-border-gray-200">
+    <dl>
+      <div class="tw-bg-gray-50 tw-px-4 tw-py-5 sm:tw-grid sm:tw-grid-cols-3 sm:tw-gap-4 sm:tw-px-6">
+        <dt class="tw-text-sm tw-font-medium tw-text-gray-500">Full name</dt>
+        <dd class="tw-mt-1 tw-text-sm tw-text-gray-900 sm:tw-mt-0 sm:tw-col-span-2">{{productDetail && productDetail.name}}</dd>
+      </div>
+      <div class="tw-bg-white tw-px-4 tw-py-5 sm:tw-grid sm:tw-grid-cols-3 sm:tw-gap-4 sm:tw-px-6">
+        <dt class="tw-text-sm tw-font-medium tw-text-gray-500">Price</dt>
+        <dd class="tw-mt-1 tw-text-sm tw-text-gray-900 sm:tw-mt-0 sm:tw-col-span-2">{{productDetail && productDetail.price | currency :'VND'}}</dd>
+      </div>
+      <div class="tw-bg-gray-50 tw-px-4 tw-py-5 sm:tw-grid sm:tw-grid-cols-3 sm:tw-gap-4 sm:tw-px-6">
+        <dt class="tw-text-sm tw-font-medium tw-text-gray-500">About</dt>
+        <dd class="tw-mt-1 tw-text-sm tw-text-gray-900 sm:tw-mt-0 sm:tw-col-span-2">{{productDetail && productDetail.desc}}</dd>
+      </div>
+    </dl>
+  </div>
+</div>
